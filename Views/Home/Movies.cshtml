@@ -1,0 +1,52 @@
+﻿@*
+*@
+@{
+}
+
+@model IEnumerable<Assignment3.Models.ApplicationResponse>
+
+<!--Bring in the model ^^-->
+<!--This is the page where all of the imputs from the user are printed out in a table.-->
+
+<h1>Movie List</h1>
+<br />
+<div>
+    <h2>Here is the list of movies that have been entered:</h2>
+    <br />
+    <table class="table">
+        <thead>
+            <!--header of the table-->
+            <!--
+        <tr><th> Category </th><th> Title </th><th> Year </th><th> Director </th><th> Rating </th><th> Edited </th><th> Lent To </th><th> Notes </th></tr>
+    -->
+
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Title</th>
+                <th scope="col">Year</th>
+                <th scope="col">Director</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Edited</th>
+                <th scope="col"> Lent To </th>
+                <th scope="col"> Notes </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Contents of the table bring brought in-->
+            @foreach (Assignment3.Models.ApplicationResponse x in Model)
+            {
+                <!--IF the movie title is not "Independence Day then it will display the information from the form.-->
+                <tr>
+                    <td>@x.Category</td>
+                    <td>@x.Title</td>
+                    <td>@x.Year</td>
+                    <td>@x.Director</td>
+                    <td>@x.Rating</td>
+                    <td>@x.Edited</td>
+                    <td>@x.LentTo</td>
+                    <td>@x.Notes</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
