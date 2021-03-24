@@ -11,7 +11,7 @@
 <h3>Enter a movie</h3>
 <br />
 <!--Form for the movie application:-->
-<form asp-action="MoviesApp" method="post">
+<form name="myForm" asp-action="MoviesApp" method="post">
     <div>
         <label asp-for="Category">Category</label>
         <input id="Category" asp-for="Category" required/><!--required field-->
@@ -22,11 +22,11 @@
     </div>
     <div>
         <label asp-for="Year">Year</label>
-        <input id="Title" asp-for="Year" required /><!--Required field-->
+        <input id="Year" asp-for="Year" required /><!--Required field-->
     </div>
     <div>
         <label asp-for="Director">Director</label>
-        <input id="Title" asp-for="Director" required /><!--Required field-->
+        <input id="Director" asp-for="Director" required /><!--Required field-->
     </div>
     <div>
         <label asp-for="Rating">Rating</label><!--Required field-->
@@ -40,7 +40,7 @@
     </div>
     <div>
         <label asp-for="Edited">Edited</label>
-        <select asp-for="Edited">
+        <select id="Edited" asp-for="Edited">
             <option value="">Choose One</option>
             <option value="true">Yes</option>
             <option value="false">No</option>
@@ -55,7 +55,26 @@
         <input id="Notes" asp-for="Notes" maxlength="25" /> <!--This is limiting the notes to only be 25 characters-->
     </div>
     <br />
-    <button type="submit">Submit</button>
+    <button  class="btn btn-primary" type="submit" asp-action="MoviesApp">Submit</button>
+    <input type="button" class="btn btn-secondary" onclick="myFunction()" value="Enter Another Movie" />
     <div asp-validation-summary="All"></div> <!--Displays the error messages if the inputs are invalid-->
+    <a id="output"></a>
 </form>
+<script>
+    //this just clears the from after submition
+
+    function myFunction()
+    {
+        let sOutput = "";
+
+        sOutput = "Thanks for your submition. Check out the lists of movies that have been entered.";
+        
+        alert(sOutput);
+
+        //reloads the page for the user to enter another movie
+        window.location.reload(true);
+        
+        
+    }
+</script>
 

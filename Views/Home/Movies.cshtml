@@ -10,7 +10,7 @@
 <h1>Movie List</h1>
 <br />
 <div>
-    <h2>Here is the list of movies that have been entered:</h2>
+    <h2>Here is the list of movies that have been entered: </h2>
     <br />
     <table class="table">
         <thead>
@@ -51,7 +51,7 @@
                 <td>
                     <form asp-action="Delete" method="post">
                         <input type="hidden" name="movietitle" value="@x.Title"/>
-                        <button type="submit">Delete</button>
+                        <button class="btn btn-danger" type="submit">Delete</button>
                     </form>
                 </td>
             </tr>
