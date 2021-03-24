@@ -1,24 +1,24 @@
 ﻿
 @{
-    ViewData["Title"] = "MovieApp";
+    ViewData["Title"] = "Update";
 }
 
 @model MovieItem
-
+<!--This is the page were the user will be redirected to update a movie that is already on the databse-->
 <h1>MovieApp</h1>
 <br />
 <br />
 <h3>Enter a movie</h3>
 <br />
 <!--Form for the movie application:-->
-<form asp-action="MoviesApp" method="post">
+<form method="post">
     <div>
         <label asp-for="Category">Category</label>
-        <input id="Category" asp-for="Category" required/><!--required field-->
+        <input id="Category" asp-for="Category" required /><!--required field-->
     </div>
     <div>
         <label asp-for="Title">Title</label>
-        <input id="Title" asp-for="Title" required/><!--Required field-->
+        <input id="Title" asp-for="Title" required /><!--Required field-->
     </div>
     <div>
         <label asp-for="Year">Year</label>

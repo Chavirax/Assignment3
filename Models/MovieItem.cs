@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 //These are the action responces: all of the fields are required exept for: EDITED, LENTO, AND NOTES
 namespace Assignment3.Models
 {
-    public class ApplicationResponse
+    public class MovieItem
     {
+        [Key]
+        [Required]
+        public int MovieId { get; set; }
         [Required]
         public string Category { get; set; }
         [Required]
